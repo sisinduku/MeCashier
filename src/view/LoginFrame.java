@@ -136,7 +136,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 MainMenu mm = new MainMenu();
                 mm.show();
             }else{
-                JOptionPane.showMessageDialog(null, "Username atau Password tidak valid", "Login tidak berhasil");
+                JOptionPane.showMessageDialog(null, "Username atau Password tidak valid");
             }
         }catch(Exception e){
         
