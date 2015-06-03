@@ -6,6 +6,7 @@
 package view;
 
 import connection.DBConnection;
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -133,8 +134,12 @@ public class LoginFrame extends javax.swing.JFrame {
             
             if(rs.next()){
                 this.dispose();
-                MainMenu mm = new MainMenu();
-                mm.show();
+                if(rs.getString("privilege").equals("1")){
+                    AdminMenu mm = new AdminMenu();
+                    mm.show();
+                }else{
+                    
+                }
             }else{
                 JOptionPane.showMessageDialog(null, "Username atau Password tidak valid");
             }
