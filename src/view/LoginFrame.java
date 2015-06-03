@@ -9,14 +9,16 @@ import connection.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import model.AdminModel;
 
 /**
  *
  * @author Soliloquy
  */
 public class LoginFrame extends javax.swing.JFrame {
-    Connection conn = new DBConnection().connect();
 
     /**
      * Creates new form LoginFrame
@@ -124,23 +126,25 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
          // TODO add your handling code here:
-        String sql = "SELECT * FROM tbl_admin WHERE username=? and password=?";
-        try{
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, username.getText());
-            String encryptedPassword = encrypt.Encrypt.encrypt(password.getText());
-            ps.setString(2, encryptedPassword);
-            ResultSet rs = ps.executeQuery();
-            
-            if(rs.next()){
+        
+        AdminModel admin = new AdminModel();
+        String encryptedPassword = "";
+        if(admin.getAdminModelbyUsername(username.getText())){
+            String passwordAdmin = admin.getPassword();
+            try {
+                encryptedPassword = encrypt.Encrypt.encrypt(password.getText());
+            } catch (Exception ex) {
+                System.out.println(ex);
+            }
+            if(passwordAdmin.equals(encryptedPassword)){
                 this.dispose();
                 AdminMenu am = new AdminMenu();
                 am.show();
             }else{
                 JOptionPane.showMessageDialog(null, "Username atau Password tidak valid");
             }
-        }catch(Exception e){
-        
+        }else{
+           JOptionPane.showMessageDialog(null, "Username atau Password tidak valid");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
