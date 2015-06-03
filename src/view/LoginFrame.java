@@ -128,13 +128,14 @@ public class LoginFrame extends javax.swing.JFrame {
         try{
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, username.getText());
-            ps.setString(2, password.getText());
+            String encryptedPassword = encrypt.Encrypt.encrypt(password.getText());
+            ps.setString(2, encryptedPassword);
             ResultSet rs = ps.executeQuery();
             
             if(rs.next()){
                 this.dispose();
-                MainMenu mm = new MainMenu();
-                mm.show();
+                AdminMenu am = new AdminMenu();
+                am.show();
             }else{
                 JOptionPane.showMessageDialog(null, "Username atau Password tidak valid");
             }
