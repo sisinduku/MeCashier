@@ -6,6 +6,7 @@
 package view;
 
 import connection.DBConnection;
+import encrypt.AESCrypt;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -128,7 +129,9 @@ public class LoginFrame extends javax.swing.JFrame {
         try{
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, username.getText());
-            ps.setString(2, password.getText());
+            // PGytuvRI/Jmicfl8uOgxqQ==
+            String encryptedPassword = AESCrypt.encrypt(password.getText());
+            ps.setString(2, encryptedPassword);
             ResultSet rs = ps.executeQuery();
             
             if(rs.next()){
