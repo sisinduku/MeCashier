@@ -42,3 +42,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 /build/
+nbproject/private/private.properties
+
+src/connection/DBConnection.java
