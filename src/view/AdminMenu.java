@@ -5,26 +5,17 @@
  */
 package view;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import model.MenuModel;
-
 /**
  *
  * @author Soliloquy
  */
 public class AdminMenu extends javax.swing.JFrame {
 
-    DefaultTableModel model;
     /**
      * Creates new form MainMenu
      */
     public AdminMenu() {
         initComponents();
-        tabel_makanan();
-        tampil_tabel();
     }
 
     /**
@@ -36,24 +27,9 @@ public class AdminMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        admin = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         makanan = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        txtHarga = new javax.swing.JTextField();
-        txtKodeMenu = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtKeterangan = new javax.swing.JTextArea();
-        txtNamaMenu = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tbl_makanan = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        simpan = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -62,112 +38,38 @@ public class AdminMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        admin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel1.setText("Admin Menu");
-        admin.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 140, 50));
 
-        getContentPane().add(admin, "card2");
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(123, 123, 123)
+                .addComponent(jLabel1)
+                .addContainerGap(139, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(239, Short.MAX_VALUE))
+        );
 
-        makanan.setMinimumSize(new java.awt.Dimension(520, 463));
-        makanan.setPreferredSize(new java.awt.Dimension(520, 463));
-        makanan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel1, "card2");
 
-        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel2.setText("Form Daftar Menu");
-        makanan.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 167, 30));
-
-        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel3.setText("Keterangan");
-        makanan.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel4.setText("Kode Menu");
-        makanan.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel5.setText("Nama Menu");
-        makanan.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel6.setText("Harga");
-        makanan.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
-
-        txtHarga.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        txtHarga.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtHargaActionPerformed(evt);
-            }
-        });
-        makanan.add(txtHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 157, 31));
-
-        txtKodeMenu.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        txtKodeMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtKodeMenuActionPerformed(evt);
-            }
-        });
-        makanan.add(txtKodeMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 157, 30));
-
-        txtKeterangan.setColumns(20);
-        txtKeterangan.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        txtKeterangan.setRows(5);
-        jScrollPane1.setViewportView(txtKeterangan);
-
-        makanan.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, -1, 100));
-
-        txtNamaMenu.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        txtNamaMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNamaMenuActionPerformed(evt);
-            }
-        });
-        makanan.add(txtNamaMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 157, 31));
-
-        tbl_makanan.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        tbl_makanan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbl_makananMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(tbl_makanan);
-
-        makanan.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, 100));
-
-        jButton1.setText("Hapus");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        makanan.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, -1, -1));
-
-        simpan.setText("Simpan");
-        simpan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                simpanActionPerformed(evt);
-            }
-        });
-        makanan.add(simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
-
-        jButton3.setText("Ubah");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        makanan.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, -1));
+        javax.swing.GroupLayout makananLayout = new javax.swing.GroupLayout(makanan);
+        makanan.setLayout(makananLayout);
+        makananLayout.setHorizontalGroup(
+            makananLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 527, Short.MAX_VALUE)
+        );
+        makananLayout.setVerticalGroup(
+            makananLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 345, Short.MAX_VALUE)
+        );
 
         getContentPane().add(makanan, "card3");
 
@@ -175,11 +77,6 @@ public class AdminMenu extends javax.swing.JFrame {
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem1.setText("Daftar Paket");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
         jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
@@ -192,154 +89,15 @@ public class AdminMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        admin.setVisible(false);
-        makanan.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-    
-    private void clear(){
-        txtKodeMenu.setText("");
-        txtNamaMenu.setText("");
-        txtKeterangan.setText("");
-        txtHarga.setText("");
-    }
-    
-    private void tabel_makanan(){
-        model = new DefaultTableModel();
-        tbl_makanan.setModel(model);
-        model.addColumn("Kode Paket Makanan");
-        model.addColumn("Nama Paket Makanan");
-        model.addColumn("Keterangan Paket");
-        model.addColumn("Harga");
-    }
-    
-    private void tampil_tabel(){
-        MenuModel menu = new MenuModel();
-        ArrayList konten = new ArrayList();
-        konten = menu.getMenuContent();
-        try{
-            for (Iterator it = konten.iterator(); it.hasNext();) {
-                model.addRow((Object[]) it.next());
-            }
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-    private void txtHargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHargaActionPerformed
-        
-    }//GEN-LAST:event_txtHargaActionPerformed
-
-    private void txtKodeMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKodeMenuActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtKodeMenuActionPerformed
-
-    private void txtNamaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamaMenuActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNamaMenuActionPerformed
-
-    private void simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanActionPerformed
-        MenuModel menu = new MenuModel();
-        if(simpan.getText().equals("Batal")){
-            clear();
-            simpan.setText("Simpan");
-        }else{
-            if(txtKodeMenu.getText().equals("") || txtNamaMenu.getText().equals("") || txtKeterangan.getText().equals("") || txtHarga.getText().equals("")){
-                JOptionPane.showMessageDialog(this, "Mohon diisi data yang kosong", "Pesan", JOptionPane.WARNING_MESSAGE);
-            }else{
-                int harga = Integer.parseInt(txtHarga.getText());
-                String insert;
-                insert = menu.insertMenu(txtKodeMenu.getText(), txtNamaMenu.getText(), txtKeterangan.getText(), harga);
-                if (insert.equals("sukses")) {
-                    JOptionPane.showMessageDialog(this, "Berhasil Ditambah");
-                    tabel_makanan();
-                    tampil_tabel();
-                    clear();
-                }else{
-                    JOptionPane.showMessageDialog(this, "Gagal");
-                }
-            }
-        }
-    }//GEN-LAST:event_simpanActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        MenuModel menu = new MenuModel();
-        int row = tbl_makanan.getSelectedRow();
-        if(row == -1){
-            JOptionPane.showMessageDialog(this, "Mohon pilih tabel terlebih dahulu","Pesan",JOptionPane.WARNING_MESSAGE);
-        }else{
-            int harga = Integer.parseInt(txtHarga.getText());
-            String insert;
-            insert = menu.updateMenu(txtKodeMenu.getText(), txtNamaMenu.getText(), txtKeterangan.getText(), harga);
-            if (insert.equals("sukses")) {
-                JOptionPane.showMessageDialog(null, "Berhasil Diubah");
-                tabel_makanan();
-                tampil_tabel();
-                clear();
-                simpan.setText("Simpan");
-            }else{
-                JOptionPane.showMessageDialog(this, "Gagal");
-            }
-        }
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void tbl_makananMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_makananMouseClicked
-        int row = tbl_makanan.getSelectedRow();
-        txtKodeMenu.setText(tbl_makanan.getValueAt(row, 0).toString());
-        txtNamaMenu.setText(tbl_makanan.getValueAt(row, 1).toString());
-        txtKeterangan.setText(tbl_makanan.getValueAt(row, 2).toString());
-        txtHarga.setText(tbl_makanan.getValueAt(row, 3).toString());
-        txtKodeMenu.setEnabled(false);
-        simpan.setText("Batal");
-    }//GEN-LAST:event_tbl_makananMouseClicked
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        MenuModel menu = new MenuModel();
-        int row = tbl_makanan.getSelectedRow();
-        if(row == -1){
-            JOptionPane.showMessageDialog(this, "Mohon pilih tabel terlebih dahulu","Pesan",JOptionPane.WARNING_MESSAGE);
-        }else{
-            int dialogResult = JOptionPane.showConfirmDialog (null, "Apakah baris ini ingin dihapus?","Warning",JOptionPane.YES_NO_OPTION);
-            if(dialogResult == JOptionPane.YES_OPTION){
-                String insert;
-                insert = menu.deleteMenu(txtKodeMenu.getText());
-                if (insert.equals("sukses")) {
-                    JOptionPane.showMessageDialog(null, "Berhasil Dihapus");
-                    tabel_makanan();
-                    tampil_tabel();
-                    clear();
-                    simpan.setText("Simpan");
-                }else{
-                    JOptionPane.showMessageDialog(this, "Gagal");
-                }
-            }
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel admin;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel makanan;
-    private javax.swing.JButton simpan;
-    private javax.swing.JTable tbl_makanan;
-    private javax.swing.JTextField txtHarga;
-    private javax.swing.JTextArea txtKeterangan;
-    private javax.swing.JTextField txtKodeMenu;
-    private javax.swing.JTextField txtNamaMenu;
     // End of variables declaration//GEN-END:variables
 }
