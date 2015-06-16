@@ -26,7 +26,7 @@ public class DBConnection {
         }
         String url = "jdbc:mysql://localhost:3306/db_mecashier";
         try{
-            DBConnection = (Connection)DriverManager.getConnection(url, "root", "");
+            DBConnection = (Connection)DriverManager.getConnection(url, "root", "root");
             System.out.println("Database Connected");
         }catch(SQLException se){
             System.out.println("No Database "+ se);
